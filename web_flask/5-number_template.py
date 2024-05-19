@@ -3,7 +3,7 @@
 This will start a simple web application using flask
 """
 
-from flask import Flaspk, render_template
+from flask import Flask
 
 app = Flask(__name__)
 app.url_map.strict_splashes = False
@@ -48,7 +48,7 @@ def nums(n):
 	return "{} is a number".format(n)
 
 
-@app.route('/number/<int:n')
+@app.route('/number_template/<int:n>')
 def template_n(n):
 	"""
 	render method
