@@ -21,5 +21,23 @@ def hbnb():
 	different
 	"""
 	return "HBNB"
+
+@app.route('/c/<text>')
+def parms(text):
+	"""
+	params formating
+	"""
+	fparams = text.replace('_', ' ')
+	return "c {}".format(fparams)
+
+
+@app.route('/python', defaults={'text': 'is cool'})
+@app.route('/python/<text>')
+def no_text(text):
+	"""
+	with params and text
+	"""
+	with_text = text.replace('_', ' ')
+	return "Python {}".format(with_text)
 if __name__ == '__main__':
 	app.run(host='0.0.0.0', port=5000)
